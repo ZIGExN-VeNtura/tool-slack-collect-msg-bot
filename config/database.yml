@@ -30,9 +30,9 @@ development:
 test:
   <<: *default
   database: slack_collect_msg_test
-  host: <%= ENV.fetch("TEST_DB_HOST") { "test_db" } %>
-  username: <%= ENV.fetch("DB_USER") { "rails_user" } %>
-  password: <%= ENV.fetch("DB_PASSWORD") { "password" } %>
+  host: <%= ENV.fetch("TEST_DB_HOST") { "127.0.0.1" } %>
+  username: <%= ENV.fetch("DB_USER") { "root" } %>
+  password: <%= ENV.fetch("DB_PASSWORD") { "" } %>
   port: <%= ENV.fetch("TEST_DB_PORT") { "3306" } %>
 
 # As with config/credentials.yml, you never want to store sensitive information,
