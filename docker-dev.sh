@@ -39,9 +39,9 @@ case "$1" in
   
   "test")
     echo "🧪 Running tests..."
-    docker compose run --rm -e RAILS_ENV=test web bundle exec rails db:create
-    docker compose run --rm -e RAILS_ENV=test web bundle exec rails db:migrate
-    docker compose run --rm -e RAILS_ENV=test web bundle exec rails test
+    docker compose run --rm -e RAILS_ENV=test -e TEST_DB_HOST=test_db -e DB_USER=root -e DB_PASSWORD= web bundle exec rails db:create
+    docker compose run --rm -e RAILS_ENV=test -e TEST_DB_HOST=test_db -e DB_USER=root -e DB_PASSWORD= web bundle exec rails db:migrate
+    docker compose run --rm -e RAILS_ENV=test -e TEST_DB_HOST=test_db -e DB_USER=root -e DB_PASSWORD= web bundle exec rails test
     ;;
   
   "clean")
